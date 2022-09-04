@@ -89,7 +89,7 @@ CREATE TABLE signos (
     glucem int NOT NULL,
     fecha_diag date NOT NULL,
     diag_paci varchar (30) NOT NULL,
-    suge_cuidado text(100) NOT NULL,
+    suge_cuidado varchar (100) NOT NULL,
     FOREIGN KEY (docu_paci) REFERENCES pacientes(docu_paci) -- clave foranea a documento de paciente
 );
 
