@@ -19,11 +19,11 @@ FROM pacientes INNER JOIN signos ON pacientes.docu_paci = signos.docu_paci;
 /*Saber cuales son los pacientes del medico identificado con la cedula numero 1057570578 y los datos completos de los pacientes*/
 
 SELECT * FROM pacientes
-WHERE (docu_medi = "1057570578");
+WHERE (docu_medi = '1057570578');
 
 /*Saber cuales son los nombres y apellidos de los pacientes del medico identificado con la cedula numero 1057570578*/
 
 SELECT prim_nomb_paci, segu_nomb_paci, prim_apel_paci, segu_apel_paci FROM pacientes
-WHERE (docu_medi = "1057570578");
+WHERE (docu_medi = '1057570578');
 
 
