@@ -11,7 +11,8 @@ class medicos(models.Model):
   regist_medi = models.CharField(max_length=15)
   usuario_med = models.CharField(max_length=30)
   contrasena_med = models.CharField(max_length=12)
-  
+  isAdmin = models.BooleanField(default=False) # por postman se crean usuarios normales y por sql se crearian los admin
+
 class enfermeros(models.Model):
   docu_enfer = models.IntegerField(primary_key='docu_enfer')
   genero = models.CharField(max_length=12)
