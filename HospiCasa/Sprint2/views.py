@@ -125,3 +125,21 @@ def LeerTodosLosPacientes(request): #consulatr base de datos de pacientes
     else:
         return HttpResponseNotAllowed(['GET'], "Método inválido")
     
+  
+    
+def LeerUnPaciente(request, docu_paci):
+    if request.method == 'GET':
+        try:
+            Paci = pacientes.objects.filter(docu_paci = docu_paci).first()
+            if (not Paci):
+                return HttpResponseBadRequest("El documento consultado no se encuentra")
+            datos = {"documento del paciente": Paci.docu_paci, "primer nombre": Paci.prim_nomb_paci, "segundo nombre": Paci.segu_nomb_paci, "primer apellido": Paci.prim_apel_paci, "segundo apellido": Paci.segu_apel_paci, 
+                     "direccion": Paci.direc_paci, "ciudad": Paci.ciudad_paci}
+            resp = HttpResponse()
+            resp.headers['Content-Type'] = "text/json"
+            resp.content = json.dumps(datos)
+            return resp
+        except:
+            return HttpResponseServerError("Error de servidor")
+    else:
+        return HttpResponseNotAllowed(['GET'], "Método inválido")

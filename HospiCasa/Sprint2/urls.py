@@ -7,4 +7,5 @@ urlpatterns = [
     path('nuevofamiliar', views.nuevofamiliar, name='nuevofamiliar'),
     path('LeerTodosLosPacientes', views.LeerTodosLosPacientes, name='LeerTodosLosPacientes'),
     path('nuevomedico', views.nuevomedico, name='nuevomedico'),
+    path('LeerUnPaciente/<int:docu_paci>', views.LeerUnPaciente, name='LeerUnPaciente'),
 ]
