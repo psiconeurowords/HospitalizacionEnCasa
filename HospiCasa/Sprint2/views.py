@@ -1,52 +1,127 @@
+import datetime
 import json
-from wsgiref import headers
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseBadRequest, HttpResponseServerError
 
-from .models import Medicos
+from .models import pacientes, familiares, medicos
 
-def principal(request):
-    return HttpResponse("Esta es la pagina principal de Hospitalizacion en casa")
-    
-def medicos(request):
+def home(request):
+    return HttpResponse("Esta es la pagina principal de hospitalizacion en casa")
+
+def nuevomedico(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            medicos = Medicos(
-                docu_medi = data ["docu_medi"]
-                genero = data ["genero"]
-                prim_nomb_medi = data ["prim_nomb_medi"]
-                segu_nomb_medi = data ["segu_nomb_medi"]
-                prim_apel_medi = data ["prim_apel_medi"]
-                segu_apel_medi = data ["segu_apel_medi"]
-                especialidad = data ["especialidad"]
-                regist_medi = data ["regist_medi"]
-                usuario_med = data ["usuario_med"]
-                contrasena_med = data ["contrasena_med"]
+            print(data)
+            print(type(data))
+            Medi = medicos (
+                docu_medi = data["docu_medi"],
+                genero = data["genero"],
+                prim_nomb_medi = data["prim_nomb_medi"],
+                segu_nomb_medi = data["segu_nomb_medi"],
+                prim_apel_medi = data["prim_apel_medi"],
+                segu_apel_medi = data["segu_apel_medi"],
+                especialidad = data["especialidad"],
+                regist_medi = data["regist_medi"],
+                usuario_med = data["usuario_med"],
+                contrasena_med = data["contrasena_med"],
+                isAdmin = data["isAdmin"],
             )
-            medicos.save()
-            return HttpResponse("Datos del medico agregados")
+            Medi.save()
+            return HttpResponse("Medico agregado")
         except:
             return HttpResponseBadRequest("Error en los datos recibidos")
     else:
-        return HttpResponseNotAllowed(['POST'],"Metodo invalido")
+        return HttpResponseNotAllowed(['POST'], "Método inválido")
     
-def obtenerMedicos(request):
+
+
+def nuevopaciente(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            print(data)
+            print(type(data))
+            Paci = pacientes (
+                docu_paci = data["docu_paci"],
+                genero = data["genero"],
+                fech_naci_paci = data["fech_naci_paci"],
+                prim_nomb_paci = data["prim_nomb_paci"],
+                segu_nomb_paci = data["segu_nomb_paci"],
+                prim_apel_paci = data["prim_apel_paci"],
+                segu_apel_paci = data["segu_apel_paci"],
+                ubic_paci = data["ubic_paci"],
+                direc_paci = data["direc_paci"],
+                ciudad_paci = data["ciudad_paci"],
+                tele_paci = data["tele_paci"],
+                usuario_paci = data["usuario_paci"],
+                contrasena_paci = data["contrasena_paci"],
+                isAdmin = data["isAdmin"],
+                docu_fami = data["docu_fami"],
+                docu_medi = data["docu_medi"],
+                docu_enfer = data["docu_enfer"],
+            )
+            Paci.save()
+            return HttpResponse("Paciente agregado")
+        except:
+            return HttpResponseBadRequest("Error en los datos recibidos")
+    else:
+        return HttpResponseNotAllowed(['POST'], "Método inválido")
+    
+
+def nuevofamiliar(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            print(data)
+            print(type(data))
+            Fami = familiares (
+                docu_fami = data["docu_fami"],
+                genero = data["genero"],
+                prim_nomb_fami = data["prim_nomb_fami"],
+                segu_nomb_fami = data["segu_nomb_fami"],
+                prim_apel_fami = data["prim_apel_fami"],
+                segu_apel_fami = data["segu_apel_fami"],
+                tel_fami = data["tel_fami"],
+                dir_fami = data["dir_fami"],
+                corr_fami = data["corr_fami"],
+                usuario_fami = data["usuario_fami"],
+                contrasena_fami = data["contrasena_fami"],
+                isAdmin = data["isAdmin"],
+                docu_paci = data["docu_paci"],
+                parentesco = data["parentesco"],
+            )
+            Fami.save()
+            return HttpResponse("Familiar asignado a paciente")
+        except:
+            return HttpResponseBadRequest("Error en los datos recibidos")
+    else:
+        return HttpResponseNotAllowed(['POST'], "Método inválido")
+
+
+
+def LeerTodosLosPacientes(request):
     if request.method == 'GET':
         try:
-            medicos = Medicos.objects.all()
-            datTodosLosMed = []
-            for medico in medicos:
-                datos = {"docu_medi": medico.docu_medi, "genero": medico.genero, "prim_nomb_medi": medico.prim_nomb_medi, 
-                         "segu_nomb_medi": medico.segu_nomb_medi, "prim_apel_medi": medico.prim_apel_medi,
-                         "segu_apel_medi": medico.segu_apel_medi, "especialidad": medico.especialidad,
-                         "regist_medi": medico.regist_medi}
-                datTodosLosMed.append(datos)
-                resp = HttpResponse()
-                resp.headers['Content-Type'] = 'text/json' 
-                resp.content(json.dumps(datTodosLosMed))
-                return resp
+            Pacientes = pacientes.objects.all()
+            if (not Pacientes):
+                return HttpResponseBadRequest("No existen pacientes registrados en el sistema.")
+            todosLosPacientes = []
+            for paci in Pacientes:
+                data = {"docu_paci": paci.docu_paci, "genero": paci.genero, "prim_nomb_paci": paci.prim_nomb_paci,"segu_nomb_paci": paci.segu_nomb_paci, 
+                        "prim_apel_paci": paci.prim_apel_paci, "segu_apel_paci": paci.segu_apel_paci, "ubic_paci": paci.ubic_paci, "direc_paci": paci.direc_paci, 
+                        "ciudad_paci": paci.ciudad_paci, "tele_paci": paci.tele_paci, "usuario_paci": paci.usuario_paci,"docu_fami": paci.docu_fami,
+                        "docu_medi": paci.docu_medi, "docu_enfer": paci.docu_enfer}
+                todosLosPacientes.append(data) 
+            print (todosLosPacientes)             
+            resp = HttpResponse()
+            print (HttpResponse())  
+            resp.headers['Content-Type'] = "text/json"
+            print (resp.headers['Content-Type'])  
+            resp.content = json.dumps(todosLosPacientes)
+            return resp
         except:
             return HttpResponseServerError("Error de servidor")
     else:
-        return HttpResponseNotAllowed(['GET'],"Metodo invalido")
+        return HttpResponseNotAllowed(['GET'], "Método inválido")
+    
