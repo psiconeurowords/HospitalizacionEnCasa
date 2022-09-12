@@ -6,9 +6,9 @@ from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseBadReq
 from .models import pacientes, familiares, medicos
 
 def home(request):
-    return HttpResponse("Esta es la pagina principal de hospitalizacion en casa")
+    return HttpResponse("Esta es la pagina principal de hospitalizacion en casa") #pagina inicial
 
-def nuevomedico(request):
+def nuevomedico(request):#registro de medicos
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -36,7 +36,7 @@ def nuevomedico(request):
     
 
 
-def nuevopaciente(request):
+def nuevopaciente(request): #registro de pacientes
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -69,7 +69,7 @@ def nuevopaciente(request):
         return HttpResponseNotAllowed(['POST'], "Método inválido")
     
 
-def nuevofamiliar(request):
+def nuevofamiliar(request): #registro de familiar
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -100,7 +100,7 @@ def nuevofamiliar(request):
 
 
 
-def LeerTodosLosPacientes(request):
+def LeerTodosLosPacientes(request): #consulatr base de datos de pacientes
     if request.method == 'GET':
         try:
             Pacientes = pacientes.objects.all()
