@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> pagina de inicio </title>
+
+    <link rel="stylesheet" href="estilosmedicos.css"> <!--= Enlaza a archivo con codigo css-->
+</head>
+
+<body>
+    
+    <nav>
+        <img src="ImagenesHospiCasa/pngwing.com.png " alt = "Logo Hospital"> 
+        <ul>
+            <li><a href="index.html">Inicio</a><//li>
+            <li><a href="Formulario.html">Registro de usuarios</a><//li>
+            <li><a href="FormularioFamiliares.html">Registro de familiares</a><//li>
+            <li><a href="consulta_un_paciente.html">Consultar un paciente</a><//li>
+            <li><a href="Formulario de consulta pacientes.html">Consultar pacientes</a><//li>
+        </ul>
+    </nav>    
+    <header> 
+        <h2>Registro de Medicos</h2>
+    </header>
+<div class = "container_seccionesforms" id="formData">
+    <div class = "seccionesforms" id="info">
+    <section>
+        <Form name="Formulario" id="Formulario" method="post"> <!--El metodo se cambia a post por seguridad 2022-09-19 1:04:59--> 
+                                          
+            <!-- <label for = "docu_paci"> Documento </label><br>-->
+            <input type = "number" id = "docu_medi" name ="docu_medi" placeholder = "Documento"><br>
+            <br>   
+            <!--<label for = "genero"> Genero </label><br>-->
+            <input type = "text" id = "genero" name ="genero" required minlength="5" maxlength="9" size="20" placeholder="Genero"><br>
+            <br>
+           <!--<label for = "fname"> Primer nombre </label><br>-->
+            <input type = "text" id = "prim_nomb_medi" name ="prim_nomb_medi" placeholder="Primer nombre"><br>
+            <br>
+            <!--<label for = "fname"> Segundo nombre </label><br>-->
+            <input type = "text" id = "segu_nomb_medi" name ="segu_nomb_medi" placeholder="Segundo nombre"><br>
+            <br>
+            <!--<label for = "lname"> Primer apellido </label><br>-->
+            <input type = "text" id = "prim_apel_medi" name ="prim_apel_medi" placeholder="Primer apellido"><br>
+            <br>
+            <!--<label for = "lname"> Segundo apellido </label><br>-->
+            <input type = "text" id = "segu_apel_medi" name ="segu_apel_medi" placeholder="Segundo apellido"><br>
+            <br>
+           
+    </section>
+     <section>     
+            <!--<label for = "ciudad_paci"> Ciudad de ubicacion del paciente </label><br>-->
+            <input type = "text" id = "especialidad" name ="especialidad" placeholder="Especialidad"><br>
+            <br>
+            <!--<label for = "tele_paci"> Telefono del paciente </label><br>-->
+            <input type = "text" id = "regist_medi" name ="regist_medi" placeholder="Registro medico"><br>
+            <br>
+            <!--<label for = "usuario_paci"> Usuario del paciente </label><br>-->
+            <input type = "text" id = "usuario_medi" name ="usuario_medi" placeholder="Usuario del medico"><br>
+            <br>
+            <!--<label for = "contrasena_paci"> Contraseña del paciente </label><br>-->
+            <input type ="password" id = "contrasena_med" name ="contrasena_med" placeholder="Contraseña del medico"><br>
+            <br>
+            <label for = "isAdmin"> ¿Es administrador? </label><br>
+            <input type = "checkbox" id = "isAdmin" name ="isAdmin" value = "False"><br>
+            <br>
+            <input id="enviar" type ="submit" value="Registrar">
+        </Form>
+    </section>
+        <img src="ImagenesHospiCasa/pngwing.com(6).png" width="300px" height="453px" alt = "Imagen de dos medicos"> 
+</div>
+   
+    </article>
+    <footer>
+        <h3>Gracias por prestar el mejor servicio</h3>
+    <footer>
+        <script src="registrodemedicos.js"></script> <!--Conecta el html con el javascript-->
+</body>
+</html>

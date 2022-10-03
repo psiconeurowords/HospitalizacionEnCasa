@@ -12,8 +12,8 @@ def nuevomedico(request):#registro de medicos
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            print(data)
-            print(type(data))
+            #print(data)
+            #print(type(data))
             Medi = medicos (
                 docu_medi = data["docu_medi"],
                 genero = data["genero"],
@@ -40,8 +40,8 @@ def nuevopaciente(request): #registro de pacientes
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            print(data)
-            print(type(data))
+            #print(data)
+            #print(type(data))
             Paci = pacientes (
                 docu_paci = data["docu_paci"],
                 genero = data["genero"],
@@ -73,8 +73,8 @@ def nuevofamiliar(request): #registro de familiar
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            print(data)
-            print(type(data))
+            #print(data)
+            #print(type(data))
             Fami = familiares (
                 docu_fami = data["docu_fami"],
                 genero = data["genero"],
@@ -133,8 +133,13 @@ def LeerUnPaciente(request, docu_paci):
             Paci = pacientes.objects.filter(docu_paci = docu_paci).first()
             if (not Paci):
                 return HttpResponseBadRequest("El documento consultado no se encuentra")
-            datos = {"documento del paciente": Paci.docu_paci, "primer nombre": Paci.prim_nomb_paci, "segundo nombre": Paci.segu_nomb_paci, "primer apellido": Paci.prim_apel_paci, "segundo apellido": Paci.segu_apel_paci, 
-                     "direccion": Paci.direc_paci, "ciudad": Paci.ciudad_paci}
+            datos = {"documentodelpaciente": Paci.docu_paci, 
+                     "primernombre": Paci.prim_nomb_paci, 
+                     "segundonombre": Paci.segu_nomb_paci, 
+                     "primerapellido": Paci.prim_apel_paci, 
+                     "segundoapellido": Paci.segu_apel_paci, 
+                     "direccion": Paci.direc_paci, 
+                     "ciudad": Paci.ciudad_paci}
             resp = HttpResponse()
             resp.headers['Content-Type'] = "text/json"
             resp.content = json.dumps(datos)

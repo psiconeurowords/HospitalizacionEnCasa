@@ -15,7 +15,6 @@ function getPacientes() {
       console.log(data);
       Pacientes = JSON.parse(data);
       handlePacientes();
-      print(data);
     })
     .catch(err => {
       console.log("Error: " + err);
@@ -25,28 +24,48 @@ function getPacientes() {
 function handlePacientes() {
   const divs = [];
   Pacientes.forEach((paci) => {
-    const div = document.createElement("div");
-    div.innerHTML =
-      `<h3>Documento: ${paci.docu_paci}</h3>
-      <h3>Genero: ${paci.genero}</h3>
-      <h3>Nombre1: ${paci.prim_nomb_paci}</h3>
-      <h3>Nombre1: ${paci.prim_nomb_paci}</h3>
-      <h3>Nombre2: ${paci.segu_nomb_paci}</h3>
-      <h3>Apellido1: ${paci.prim_apel_paci}</h3>
-      <h3>Apellido2: ${paci.segu_apel_paci}</h3>
-      <h3>Ubicacion: ${paci.ubic_paci}</h3>
-      <h3>Direccion: ${paci.direc_paci}</h3>
-      <h3>Ciudad: ${paci.ciudad_paci}</h3> 
-      <h3>Telefono: ${ paci.tele_paci}</h3>
-      <h3>usuario: ${ paci.usuario_paci}</h3>
-      <h3>docu_fami: ${ paci.docu_fami}</h3>
-      <h3>docu_medi: ${paci.docu_medi}</h3> 
-      <h3>docu_enfer:${paci.docu_enfer}</h3>`;
-    divs.push(div);
+    //const div = document.createElement("div");
+    const paciData =
+      `<tr><td>${paci.docu_paci}</td>
+      <td>${paci.genero}</td>
+      <td>${paci.prim_nomb_paci}</td>
+      <td>${paci.segu_nomb_paci}</td>
+      <td>${paci.prim_apel_paci}</td>
+      <td>${paci.segu_apel_paci}</td>
+      <td>${paci.ubic_paci}</td>
+      <td>${paci.direc_paci}</td>
+      <td>${paci.ciudad_paci}</td>
+      <td>${ paci.tele_paci}</td>
+      <td>${ paci.usuario_paci}</td>
+      <td>${ paci.docu_fami}</td>
+      <td>${paci.docu_medi}</td>
+      <td>${paci.docu_enfer}</td></tr>`;
+    divs.push(paciData);
   });
   document.getElementById("cargando").remove();
   const info = document.getElementById("info-pacientes");
-  divs.forEach(div => info.appendChild(div));
+  //divs.forEach(div => info.appendChild(div));
+  const table = document.createElement("table");
+  table.innerHTML=`
+  <tr> 
+    <th>Documento</th>
+    <th>Genero</th>
+    <th>Primer nombre</th>
+    <th>Segundo nombre</th>
+    <th>Primer apellido</th>
+    <th>Segundo apellido</th>
+    <th>Ubicacion</th>
+    <th>Direccion</th>
+    <th>Ciudad</th>
+    <th>Telefono</th>
+    <th>Usuario</th>
+    <th>Documento familiar</th>
+    <th>Documento medico</th>
+    <th>Documento enfermera</th>
+  </tr>`;
+  //divs.forEach(div => info.appendChild(div));
+  divs.forEach(div => table.innerHTML += div);
+  info.appendChild(table)
 }
 
 function handleError() {

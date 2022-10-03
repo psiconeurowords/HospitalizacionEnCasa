@@ -5,7 +5,7 @@
 
 body {
     margin: 0px;
-    background-color: #286b8a;
+    background-color: #f6f9fa;
 }
 header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -50,7 +50,7 @@ nav {
     width: 10%;
     color: #2aa7e6;
     border-radius: 25px;
-    box-shadow: 0px 10px 10px rgb(251, 249, 249);
+    box-shadow: 0px 10px 10px rgb(251, 249, 249);*/
 }
 
 
@@ -64,6 +64,7 @@ nav img {
     height: 142px;
     display:block;
     margin:auto;
+    padding:
 
 }
 
@@ -83,15 +84,19 @@ nav li {
 }
 
 section {
-    background-color:  #012130;
+    background-color:  #93d9fd;
     width:50%;
     border: 2px solid black;
     padding: 30px;
     margin: 15px auto;
-    color:rgb(43, 221, 245)
+    color:rgb(16, 16, 16)
     /*border-radius: 10px 40px 100px;*/
 
 }
+
+::placeholder{
+    color:#081e29;}
+
 
 article {
     width:50%;
@@ -153,13 +158,14 @@ Input[type="button"]{
     display:flex;
     width: 90%;
     
+    
 }
 .seccionesforms section{
     width: 20%;
     padding:20px;
     margin: 10px -190px 20px 200px;
     text-align: left;
-    box-shadow: 0px 10px 10px rgb(253, 252, 252);
+    box-shadow: 0px 10px 10px rgb(10, 10, 10);
 }
 
 .main-component h2{
@@ -184,7 +190,7 @@ Input[type="button"]{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:x-small;
     display:flexbox;
-    width: 80%;
+    width: 50%;
     height: 7cm;
     border-radius: 20px 60px 100px;
     border-style:solid;
@@ -253,24 +259,4 @@ Input[type="button"]{
     to{
         transform: rotate(360deg);
     }
-}
-
-table  td {
-    text-align: center;
-    padding: 10px;
-    background-color:rgb(195, 220, 241);
-    color:black;
-}
-
-table {
-    margin:0cm 1cm;
-    box-shadow: 0px 10px 10px rgb(15, 15, 15);
-    width: 100%;
-}
-
-table th {
-    color:rgb(15, 15, 15);
-    text-align: center;
-    background-color:rgb(105, 187, 254);
-    text-transform: uppercase;
 }

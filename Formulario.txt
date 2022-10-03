@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> pagina de inicio </title>
 
     <link rel="stylesheet" href="estilos.css"> <!--= Enlaza a archivo con codigo css-->
@@ -14,10 +13,7 @@
         <img src="ImagenesHospiCasa/pngwing.com.png " alt = "Logo Hospital"> 
         <ul>
             <li><a href="index.html">Inicio</a><//li>
-            <li><a href="FormularioMedicos.html">Registro de medicos</a><//li>
-            <li><a href="FormularioFamiliares.html">Registro de familiares</a><//li>
-            <li><a href="consulta_un_paciente.html">Consultar un paciente</a><//li>
-            <li><a href="Formulario de consulta pacientes.html">Consultar pacientes</a><//li>
+            <li><a href="Hospitalizacion.html">Hospitalización</a><//li>
         </ul>
     </nav>    
     <header> 
@@ -69,7 +65,7 @@
             <input type ="password" id = "contrasena_paci" name ="contrasena_paci" placeholder="Contraseña del paciente"><br>
             <br>
             <label for = "isAdmin"> ¿Es administrador? </label><br>
-            <input type = "checkbox" id = "isAdmin" name ="isAdmin" value = "False"><br>
+            <input type = "checkbox" id = "isAdmin" name ="isAdmin"><br>
             <br>
             <!--<label for = "docu_fami"> Documento del familiar </label><br>-->
             <input type = "number" id = "docu_fami" name ="docu_fami" placeholder="Documento del familiar"><br>
