@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> pagina de inicio </title>
+
+    <link rel="stylesheet" href="estilosfamiliares.css"> <!--= Enlaza a archivo con codigo css-->
+</head>
+
+<body>
+    
+    <nav>
+        <img src="ImagenesHospiCasa/pngwing.com.png " alt = "Logo Hospital"> 
+        <ul>
+            <li><a href="index.html">Inicio</a><//li>
+            <li><a href="Formulario.html">Registro de usuarios</a><//li>
+            <li><a href="FormularioMedicos.html">Registro de medicos</a><//li>
+            <li><a href="consulta_un_paciente.html">Consultar un paciente</a><//li>
+            <li><a href="Formulario de consulta pacientes.html">Consultar pacientes</a><//li>
+        </ul>
+    </nav>    
+    <header> 
+        <h2>Registro de familiares</h2>
+    </header>
+<div class = "container_seccionesforms" id="formData">
+    <div class = "seccionesforms" id="info">
+    <section>
+        <Form name="Formulario" id="Formulario" method="post"> <!--El metodo se cambia a post por seguridad 2022-09-19 1:04:59--> 
+                                          
+            <!-- <label for = "docu_paci"> Documento </label><br>-->
+            <input type = "number" id = "docu_fami" name ="docu_fami" placeholder = "Documento"><br>
+            <br>   
+            <!--<label for = "genero"> Genero </label><br>-->
+            <input type = "text" id = "genero" name ="genero" required minlength="5" maxlength="9" size="20" placeholder="Genero"><br>
+            <br>
+           <!--<label for = "fname"> Primer nombre </label><br>-->
+            <input type = "text" id = "prim_nomb_fami" name ="prim_nomb_fami" placeholder="Primer nombre"><br>
+            <br>
+            <!--<label for = "fname"> Segundo nombre </label><br>-->
+            <input type = "text" id = "segu_nomb_fami" name ="segu_nomb_fami" placeholder="Segundo nombre"><br>
+            <br>
+            <!--<label for = "lname"> Primer apellido </label><br>-->
+            <input type = "text" id = "prim_apel_fami" name ="prim_apel_fami" placeholder="Primer apellido"><br>
+            <br>
+            <!--<label for = "lname"> Segundo apellido </label><br>-->
+            <input type = "text" id = "segu_apel_fami" name ="segu_apel_fami" placeholder="Segundo apellido"><br>
+            <br>
+            <!--<label for = "tele_paci"> Telefono del paciente </label><br>-->
+            <input type = "tel" id = "tel_fami" name ="tel_fami" placeholder="Telefono del familiar"><br>
+            <br>
+    </section>
+     <section> 
+            <!--<label for = "direc_paci"> Direccion del paciente </label><br>-->
+            <input type = "text" id = "dir_fami" name ="dir_fami" placeholder="Dirección del familiar"><br>    
+            <br>
+            <input type="email" name="corr_fami" placeholder="Email"><br>
+            <br>
+            <input type = "text" id = "usuario_fami" name ="usuario_fami" placeholder="Usuario del familiar"><br>
+            <br>
+            <!--<label for = "contrasena_paci"> Contraseña del paciente </label><br>-->
+            <input type ="password" id = "contrasena_fami" name ="contrasena_fami" placeholder="Contraseña del familiar"><br>
+            <br>
+            <label for = "isAdmin"> ¿Es administrador? </label><br>
+            <input type = "checkbox" id = "isAdmin" name ="isAdmin" value = "False"><br>
+            <br>
+            <input type = "number" id = "docu_paci" name ="docu_paci" placeholder = "Documento"><br>
+            <br>
+            <input type = "text" id = "parentesco" name ="parentesco" placeholder="parentesco"><br>    
+            <br>
+            <input id="enviar" type ="submit" value="Registrar">
+            <br>
+        </Form>
+    </section>
+        <img src="ImagenesHospiCasa/pngwing.com(7).png" width="300px" height="453px" alt = "Imagen de dos manos y un corazon"> 
+</div>
+   
+    </article>
+    <footer>
+        <h3>Gracias por ser un cuidador amoroso</h3>
+    <footer>
+        <script src="registrodefamiliares.js"></script> <!--Conecta el html con el javascript-->
+</body>
+</html>

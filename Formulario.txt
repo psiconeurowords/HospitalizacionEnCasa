@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title> pagina de inicio </title>
+
+    <link rel="stylesheet" href="estilos.css"> <!--= Enlaza a archivo con codigo css-->
+</head>
+
+<body>
+    
+    <nav>
+        <img src="ImagenesHospiCasa/pngwing.com.png " alt = "Logo Hospital"> 
+        <ul>
+            <li><a href="index.html">Inicio</a><//li>
+            <li><a href="Hospitalizacion.html">Hospitalización</a><//li>
+        </ul>
+    </nav>    
+    <header> 
+        <h2>Registro de usuarios</h2>
+    </header>
+<div class = "container_seccionesforms" id="formData">
+    <div class = "seccionesforms" id="info">
+    <section>
+        <Form name="Formulario" id="Formulario" method="post"> <!--El metodo se cambia a post por seguridad 2022-09-19 1:04:59--> 
+                                          
+            <!-- <label for = "docu_paci"> Documento </label><br>-->
+            <input type = "number" id = "docu_paci" name ="docu_paci" placeholder = "Documento"><br>
+            <br>   
+            <!--<label for = "genero"> Genero </label><br>-->
+            <input type = "text" id = "genero" name ="genero" required minlength="5" maxlength="9" size="20" placeholder="Genero"><br>
+            <br>
+           <!-- <label for = "id"> Fecha de nacimiento </label><br>-->
+            <input type = "text" id = "fech_naci_paci" name ="fech_naci_paci" placeholder="Fecha de Nacimiento"><br>
+            <br>
+           <!--<label for = "fname"> Primer nombre </label><br>-->
+            <input type = "text" id = "prim_nomb_paci" name ="prim_nomb_paci" placeholder="Primer nombre"><br>
+            <br>
+            <!--<label for = "fname"> Segundo nombre </label><br>-->
+            <input type = "text" id = "segu_nomb_paci" name ="segu_nomb_paci" placeholder="Segundo nombre"><br>
+            <br>
+            <!--<label for = "lname"> Primer apellido </label><br>-->
+            <input type = "text" id = "prim_apel_paci" name ="prim_apel_paci" placeholder="Primer apellido"><br>
+            <br>
+            <!--<label for = "lname"> Segundo apellido </label><br>-->
+            <input type = "text" id = "segu_apel_paci" name ="segu_apel_paci" placeholder="Segundo apellido"><br>
+            <br>
+            <!--<label for = "ubic_paci"> Ubicacion del paciente </label><br>-->
+            <input type = "text" id = "ubic_paci" name ="ubic_paci" placeholder="Ubicacion del paciente"><br>
+            <br>
+            <!--<label for = "direc_paci"> Direccion del paciente </label><br>-->
+            <input type = "text" id = "direc_paci" name ="direc_paci" placeholder="Dirección del paciente"><br>
+    </section>
+     <section>     
+            <!--<label for = "ciudad_paci"> Ciudad de ubicacion del paciente </label><br>-->
+            <input type = "text" id = "ciudad_paci" name ="ciudad_paci" placeholder="Ciudad"><br>
+            <br>
+            <!--<label for = "tele_paci"> Telefono del paciente </label><br>-->
+            <input type = "tel" id = "tele_paci" name ="tele_paci" placeholder="Telefono del paciente"><br>
+            <br>
+            <!--<label for = "usuario_paci"> Usuario del paciente </label><br>-->
+            <input type = "text" id = "usuario_paci" name ="usuario_paci" placeholder="Usuario del paciente"><br>
+            <br>
+            <!--<label for = "contrasena_paci"> Contraseña del paciente </label><br>-->
+            <input type ="password" id = "contrasena_paci" name ="contrasena_paci" placeholder="Contraseña del paciente"><br>
+            <br>
+            <label for = "isAdmin"> ¿Es administrador? </label><br>
+            <input type = "checkbox" id = "isAdmin" name ="isAdmin"><br>
+            <br>
+            <!--<label for = "docu_fami"> Documento del familiar </label><br>-->
+            <input type = "number" id = "docu_fami" name ="docu_fami" placeholder="Documento del familiar"><br>
+            <br>
+            <!--<label for = "docu_medi"> Documento del medico </label><br>-->
+            <input type = "number" id = "docu_medi" name ="docu_medi" placeholder="Documento del medico"><br>
+            <br>
+            <!--<label for = "docu_enfer"> Documento de la enfermera </label><br>-->
+            <input type = "number" id = "docu_enfer" name ="docu_enfer" placeholder="Documento de la enfermera"><br> 
+            <br>
+            <input id="enviar" type ="submit" value="Registrar">
+        </Form>
+    </section>
+        <img src="ImagenesHospiCasa/pngwing.com (3).png" width="300px" height="453px" alt = "Imagen de atencion al cliente"> 
+</div>
+   
+    </article>
+    <footer>
+        <h3>Gracias por confiar en nuestro servicio</h3>
+    <footer>
+        <script src="registrodepacientes.js"></script> <!--Conecta el html con el javascript-->
+</body>
+</html>
